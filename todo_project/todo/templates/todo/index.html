@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        {% for item in data %}
+
+            <li>
+                {{item.id}}
+                {{item.title}} --- {{item.description}}
+                <a href="{% url 'details' item.id%}"> details</a>
+                <a href="{% url 'edit' item.id%}">edit</a>
+                <a href="{% url 'delete' item.id%}">delete</a>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <a href="/todos/new/">new</a>
+</body>
+</html>
